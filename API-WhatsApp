@@ -1,0 +1,9 @@
+const mensaje = `Hola consulto acerca de ${data.titulo}`;
+const numeroWhatsApp = '(264-tunumero)'; 
+const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+
+const masInfoBtn = document.createElement('a');
+masInfoBtn.href = urlWhatsApp;
+masInfoBtn.textContent = "Comunicarse via Whatsapp";
+masInfoBtn.classList.add('whatsapp-btn');
+contenidoDiv.appendChild(comunicarse-whatsapp-Btn);
