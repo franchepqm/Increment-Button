@@ -1,16 +1,19 @@
+import { doc, getDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
+import { firestore } from './firebaseconect.js';
+
 async function incrementCounter() {
     const docRef = doc(firestore, "Activity", "Visitas");
-    
+
     try {
         const docSnap = await getDoc(docRef);
-        
+
         if (docSnap.exists()) {
-            // Update the counter field with an increment of 1
+            // Actualizar el campo contador con un incremento de 1
             await updateDoc(docRef, {
                 Contador: increment(1)
             });
-            
-            // Fetch the updated document
+
+            // Obtener el documento actualizado
             const updatedDocSnap = await getDoc(docRef);
             console.log("Activity: ", updatedDocSnap.data().Contador);
         } else {
@@ -20,3 +23,6 @@ async function incrementCounter() {
         console.error("Error al actualizar el contador: ", error);
     }
 }
+
+// Ejecutar la función cuando la página se cargue
+window.addEventListener('load', incrementCounter);
