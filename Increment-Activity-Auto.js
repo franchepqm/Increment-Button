@@ -1,5 +1,19 @@
-import { doc, getDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
-import { firestore } from './firebaseconect.js';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+import { getFirestore, doc, getDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
+
+// Configuración de Firebase
+const firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
+    measurementId: ""
+};
+
+const app = initializeApp(firebaseConfig);
+const firestore = getFirestore(app);
 
 async function incrementCounter() {
     const docRef = doc(firestore, "Activity", "Visitas");
