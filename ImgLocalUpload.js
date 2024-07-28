@@ -11,3 +11,7 @@ function mostrarVistaPrevia(fileInput, visor) {
         visor.style.display = 'none';
     }
 }
+dynamicElements.innerHTML = `
+        <input type="file" id="fileInput">
+        <img id="Visor" src="#" alt="">
+    `;
