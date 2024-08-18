@@ -1,4 +1,5 @@
-
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+import { getFirestore, doc, getDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore.js";
 
 async function incrementarLikes(blogId, likeButton) {
     try {
