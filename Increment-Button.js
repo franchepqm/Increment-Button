@@ -3,7 +3,7 @@ import { getFirestore, doc, getDoc, updateDoc, increment } from "https://www.gst
 
 async function incrementarLikes(blogId, likeButton) {
     try {
-        const blogDocRef = doc(db, 'entradasBlog', blogId);
+        const blogDocRef = doc(db, 'Coleccion', blogId);
         
         await updateDoc(blogDocRef, {
             likes: increment(1)
@@ -16,3 +16,5 @@ async function incrementarLikes(blogId, likeButton) {
         console.error('Error al incrementar el contador:', error);
     }
 }
+
+"Coleccion" es el id de la coleccion en firestore database
